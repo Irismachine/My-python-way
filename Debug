@@ -1,0 +1,22 @@
+fname = raw_input("Enter file name: ")
+if len(fname)== 0:
+    fh = open('romeo.txt')
+else:
+    fh = open(fname)
+ # with open ('Local path') as fh:
+ 
+lst = []
+for line in fh:
+    words = line.rstrip().split()
+    # it woudld be 4 lists consisted by each line
+    for item in words:
+        if item in lst:
+            continue
+        lst.append(item)
+        # the whole process is addining one by one
+        lst.sort()
+    # print lst [the bug will be run this file for 4 times because print was in the first for loop.]
+print lst
+    
+    
+    
